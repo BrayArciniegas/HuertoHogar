@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | HuertoHogar</title>
+
+    <!--fuentes -->
+    <link rel="preconect" href="https://fonts.googleapis.com">
+    <link rel="preconect"href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!--css-->
+     <link rel="stylesheet" href="../css/base.css">
+
+</head>
+<body>
+<header>
+    <a href="index.html" class="logo">HuertoHogar</a>
+    <nav>
+        <ul>
+            <li><a href="index.html"> Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="acciones-header">
+        <a href="login.html">Iniciar sesión</a>
+        <a href="registro.html">Registrate</a>
+        <a href="carrito.html">Carrito</a>
+    </div>
+</header>
+
+<main>
+    <section class="formulario-contenedor">
+        <div
+            class="encabezado-formulario">
+            <span class="icono-bienvenida ">🌱</span>
+            <h1> ¡Bienvenido a Huerto Hogar!</h1>
+            <p>
+                Crea tu cuenta y disfruta de productos frescos,
+                naturales y directos a tu hogar.
+            </p>
+        </div>
+        
+        <form id="formRegistro">
+            <div class="campo">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">Correo electronico:</label>
+                <input
+                type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="campo">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su Contraseña" required>
+            </div>
+
+            <div class="campo">
+                <label for="confirmarPassord">Confirmar contraseña</label>
+                <input type="password" id="confirmarPassword" name="confirmarPassord" placeholder="Confirma tu contraseña"required>
+            </div>
+            <p id="mensajeError"></p>
+            <p id="mensajeExito"></p>
+
+            <button type="submit" class="btn-registrar">
+                Crear mi cuenta
+            </button>
+            
+        </form>
+
+        <p class="texto-login">¿Ya tienes una cuenta?
+        <a href="login.html">Inicia sesión aquí</a>
+        </p>
+
+    </section>
+</main>
+
+<script src="../js/validaciones.js"></script>
+
+</body>
+</html>
