@@ -204,3 +204,90 @@ footer a {
 .info-detalle button:hover {
     background-color: #256b45;
 }
+
+/* ---------- BLOGS ---------- */
+.lista-blogs {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.card-blog {
+    display: flex;
+    gap: 25px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    flex-wrap: wrap;
+}
+
+.card-blog img {
+    width: 300px;
+    max-width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.info-blog {
+    padding: 20px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.info-blog h2 {
+    margin-top: 0;
+}
+
+.info-blog p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.boton-ver-caso {
+    display: inline-block;
+    background-color: #2E8B57;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.boton-ver-caso:hover {
+    background-color: #256b45;
+}
+
+/* ---------- DETALLE DE BLOG ---------- */
+.detalle-blog {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    max-width: 800px;
+}
+
+.detalle-blog img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.detalle-blog h1 {
+    margin-top: 0;
+}
+
+.detalle-blog h2 {
+    margin-top: 25px;
+    font-size: 1.3rem;
+}
+
+.detalle-blog p {
+    color: #555;
+    line-height: 1.7;
+}
