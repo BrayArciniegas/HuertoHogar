@@ -1,3 +1,5 @@
+/* ---------- VALIDACIÓN REGISTRO ---------- */
+
 const formRegistro = document.getElementById("formRegistro");
 
 if (formRegistro) {
@@ -12,34 +14,48 @@ if (formRegistro) {
         const nombre = document.getElementById("nombre").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
-        const confirmarPassword = document.getElementById("confirmarPassword").value;
+        const confirmarPassword =
+            document.getElementById("confirmarPassword").value;
 
         mensajeError.textContent = "";
         mensajeExito.textContent = "";
+        mensajeExito.style.display = "none";
 
         if (nombre.length < 3) {
-            mensajeError.textContent = "Ingresa un nombre válido.";
+
+            mensajeError.textContent =
+                "Ingresa un nombre válido.";
 
         } else if (email === "") {
-            mensajeError.textContent = "Ingresa tu correo electrónico.";
+
+            mensajeError.textContent =
+                "Ingresa tu correo electrónico.";
 
         } else if (password.length < 6) {
+
             mensajeError.textContent =
                 "La contraseña debe tener al menos 6 caracteres.";
 
         } else if (password !== confirmarPassword) {
+
             mensajeError.textContent =
                 "Las contraseñas no coinciden.";
 
         } else {
+
             mensajeExito.textContent =
-                "¡Cuenta creada correctamente!";
+                "¡Cuenta creada correctamente! 🌱";
+
+            mensajeExito.style.display = "block";
 
             formRegistro.reset();
+
+            setTimeout(function() {
+                mensajeExito.style.display = "none";
+            }, 3000);
         }
 
     });
-
 }
 
 
@@ -67,24 +83,33 @@ if (formLogin) {
 
         mensajeErrorLogin.textContent = "";
         mensajeExitoLogin.textContent = "";
+        mensajeExitoLogin.style.display = "none";
 
         if (emailLogin === "") {
+
             mensajeErrorLogin.textContent =
                 "Ingresa tu correo electrónico.";
 
         } else if (passwordLogin.length < 6) {
+
             mensajeErrorLogin.textContent =
                 "La contraseña debe tener al menos 6 caracteres.";
 
         } else {
+
             mensajeExitoLogin.textContent =
-                "¡Inicio de sesión correcto!";
+                "¡Inicio de sesión correcto! 🌿";
+
+            mensajeExitoLogin.style.display = "block";
 
             formLogin.reset();
+
+            setTimeout(function() {
+                mensajeExitoLogin.style.display = "none";
+            }, 3000);
         }
 
     });
-
 }
 
 
@@ -118,30 +143,41 @@ if (formContacto) {
 
         mensajeErrorContacto.textContent = "";
         mensajeExitoContacto.textContent = "";
+        mensajeExitoContacto.style.display = "none";
 
         if (nombreContacto.length < 3) {
+
             mensajeErrorContacto.textContent =
                 "Ingresa un nombre válido.";
 
         } else if (emailContacto === "") {
+
             mensajeErrorContacto.textContent =
                 "Ingresa tu correo electrónico.";
 
         } else if (asunto.length < 3) {
+
             mensajeErrorContacto.textContent =
                 "El asunto debe tener al menos 3 caracteres.";
 
         } else if (mensaje.length < 10) {
+
             mensajeErrorContacto.textContent =
                 "El mensaje debe tener al menos 10 caracteres.";
 
         } else {
+
             mensajeExitoContacto.textContent =
-                "¡Tu mensaje fue enviado correctamente!";
+                "¡Tu mensaje fue enviado correctamente! 🌱";
+
+            mensajeExitoContacto.style.display = "block";
 
             formContacto.reset();
+
+            setTimeout(function() {
+                mensajeExitoContacto.style.display = "none";
+            }, 3000);
         }
 
     });
-
 }
