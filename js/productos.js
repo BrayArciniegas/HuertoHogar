@@ -84,3 +84,55 @@ function mostrarDetalleProducto() {
 // Ejecuta la función correspondiente según qué elemento exista en la página actual
 mostrarProductos();
 mostrarDetalleProducto();
+
+// ---------- LÓGICA DEL CARRITO ----------
+
+// Obtiene el carrito actual desde localStorage (o un arreglo vacío si no existe aún)
+function obtenerCarrito() {
+    const carritoGuardado = localStorage.getItem("carrito");
+    return carritoGuardado ? JSON.parse(carritoGuardado) : [];
+}
+
+// Guarda el carrito actualizado en localStorage
+function guardarCarrito(carrito) {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+// Añade un producto al carrito (o suma la cantidad si ya existe)
+function añadirAlCarrito(idProducto, cantidad) {
+    const producto = productos.find((p) => p.id === idProducto);
+    if (!producto) return;
+
+    const carrito = obtenerCarrito();
+    const itemExistente = carrito.find((item) => item.id === idProducto);
+
+    if (itemExistente) {
+        itemExistente.cantidad += cantidad;
+    } else {
+        carrito.push({
+            id: producto.id,
+            nombre: producto.nombre,
+            precio: producto.precio,
+            imagen: producto.imagen,
+            unidad: producto.unidad,
+            cantidad: cantidad
+        });
+    }
+
+    guardarCarrito(carrito);
+    alert(`${producto.nombre} añadido al carrito`);
+}
+
+// Conecta el botón "Añadir al carrito" cuando existe en la página (detalle-producto.html)
+function inicializarBotonCarrito() {
+    const boton = document.querySelector("#btnAñadirCarrito");
+    if (!boton) return;
+
+    boton.addEventListener("click", () => {
+        const id = obtenerIdDesdeURL();
+        const cantidad = parseInt(document.querySelector("#cantidad").value);
+        añadirAlCarrito(id, cantidad);
+    });
+}
+
+inicializarBotonCarrito();
