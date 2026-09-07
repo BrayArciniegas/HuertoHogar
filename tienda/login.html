@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar seción | HuertoHogar</title>
+
+    <link rel="preconect" href="https://fonts.googleapis.com">
+    <link rel="preconect" href="https://fonts.gstatic.com"crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/base.css">
+
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">🥑HuertoHogar</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html">Blogs</a></li></lo>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-contenedor">
+            <div class="encabezado-login">
+                <span class="icono-login">🌿</span>
+                <h1>¡Que bueno verte de nuevo!</h1>
+                <p>
+                    Inicia sesión para continar disfrutando de HuertoHogar.
+                </p>
+            </div>
+            <form id="formLogin">
+                <div class="campo">
+                    <label for="emailLogin">Correo electronico:</label>
+                    <input type="email" id="emailLogin" name="emailLogin" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="passwordLogin">Contraseña:</label>
+                    <input type="password" id="passwordLogin" name="passwordLogin"
+                    placeholder="Ingresa tu contraseña" required>
+                </div>
+
+                <p id="mensajeErrorLogin"></p>
+                <p id="mensajeExitoLogin"></p>
+
+                <button type="submit" class="btn-login">Iniciar sesión</button>
+            </form>
+            <p class="texto-registro">
+                ¿Aún no tienes cuenta?
+                <a href="registro.html">Registrate aquí</a>
+            </p>
+        </section>
+    </main>
+    <script src="../js/validaciones.js"></script>
+    
+</body>
+</html>
