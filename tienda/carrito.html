@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito - HuertoHogar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="logo">🥑 HuertoHogar</a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="acciones-header">
+            <a href="login.html">Iniciar sesión</a>
+            <a href="registro.html">Registrarse</a>
+            <a href="carrito.html">🛒 Carrito</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Mi Carrito de Compras</h1>
+
+        <div class="contenedor-carrito">
+            <div id="listaCarrito" class="lista-carrito">
+                <!-- Los items del carrito se generan aquí mediante JavaScript -->
+            </div>
+
+            <aside class="resumen-carrito">
+                <h2>Resumen</h2>
+                <p class="total-carrito">Total: <span id="totalCarrito">$0</span></p>
+                <button id="btnVaciarCarrito" class="btn-vaciar">Vaciar carrito</button>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 HuertoHogar - Del campo al hogar</p>
+        <p><a href="contacto.html">Contacto</a> | <a href="nosotros.html">Nosotros</a></p>
+    </footer>
+
+    <script src="../js/productos.js"></script>
+    <script src="../js/carrito.js"></script>
+</body>
+</html>
