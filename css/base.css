@@ -14,21 +14,28 @@ h1, h2, h3 {
     color: #8B4513;
 }
 
-/* ---------- HEADER / NAV ---------- */
 header {
     background-color: #2E8B57;
     padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 header .logo {
+    justify-self: start;
     color: white;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     text-decoration: none;
+}
+
+nav {
+    justify-self: center;
+}
+
+.acciones-header {
+    justify-self: end;
 }
 
 nav ul {
@@ -66,7 +73,7 @@ nav a:hover {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 5px 20px;
 }
 
 /* ---------- GRID DE PRODUCTOS ---------- */
@@ -125,17 +132,705 @@ main {
     background-color: #e6c200;
 }
 
-/* ---------- FOOTER ---------- */
-footer {
-    background-color: #8B4513;
-    color: #F7F7F7;
-    text-align: center;
-    padding: 25px 20px;
-    margin-top: 50px;
+/* ---------- FORMULARIO DE REGISTRO ---------- */
+
+.formulario-contenedor {
+    max-width: 1200px;
+    margin: 2px auto;
+    padding: 40px;
 }
 
-footer a {
-    color: #F7F7F7;
+/* Encabezado */
+
+.encabezado-formulario {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icono-bienvenida {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.encabezado-formulario h1 {
+    margin: 0 0 12px;
+    font-family: 'Montserrat',Arial,sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333333;
+}
+
+.encabezado-formulario p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555555;
+}
+
+/* Campos */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.campo label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444444;
+}
+
+.campo input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #2E8B57;
+}
+
+/* Botón */
+.btn-registrar {
+    width: 100%;
+    height: 72px;
+    margin-top: 15px;
+
+    background-color: #2E8B57;
+    color: white;
+
+    border: none;
+    border-radius: 16px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.btn-registrar:hover {
+    opacity: 0.9;
+}
+
+/* Enlace de inicio de sesión */
+
+.texto-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.texto-login a {
+    color: #2E8B57;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.texto-login a:hover {
+    text-decoration: underline;
+}
+
+#mensajeError {
+    color: #c62828;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+#mensajeExito {
+    color: #2E8B57;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* ---------- LOGIN ---------- */
+
+.login-contenedor {
+    max-width: 1200px;
+    margin: 2px auto;
+    padding: 40px;
+}
+
+/* Encabezado login */
+
+.encabezado-login {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icono-login {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.encabezado-login h1 {
+    margin: 0 0 12px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333333;
+}
+
+.encabezado-login p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555555;
+}
+
+/* Botón login */
+
+.btn-login {
+    width: 100%;
+    height: 72px;
+    margin-top: 15px;
+
+    background-color: #2E8B57;
+    color: white;
+
+    border: none;
+    border-radius: 16px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+}
+
+/* Mensajes */
+
+#mensajeErrorLogin {
+    color: #c62828;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+#mensajeExitoLogin {
+    color: #2E8B57;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* Enlace a registro */
+
+.texto-registro {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.texto-registro a {
+    color: #2E8B57;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.texto-registro a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- CONTACTO ---------- */
+
+.contacto-contenedor {
+    max-width: 1200px;
+    margin: 2px auto;
+    padding: 40px;
+}
+
+/* Encabezado contacto */
+
+.encabezado-contacto {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icono-contacto {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.encabezado-contacto h1 {
+    margin: 0 0 12px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333333;
+}
+
+.encabezado-contacto p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555555;
+}
+
+/* Campo de mensaje */
+
+.campo textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 11px 14px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1rem;
+    background-color: white;
+    resize: vertical;
+}
+
+.campo textarea:focus {
+    outline: none;
+    border-color: #2E8B57;
+}
+
+/* Botón contacto */
+
+.btn-contacto {
+    width: 100%;
+    height: 72px;
+    margin-top: 15px;
+
+    background-color: #2E8B57;
+    color: white;
+
+    border: none;
+    border-radius: 16px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.btn-contacto:hover {
+    opacity: 0.9;
+}
+
+/* Mensajes de validación */
+
+#mensajeErrorContacto {
+    color: #c62828;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+#mensajeExito ,
+#mensajeExitoLogin,
+#mensajeExitoContacto{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    color: #2E8B57;
+
+    padding: 30px 45px;
+    border-radius: 16px;
+    border: 2px solid #2E8B57;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+
+    z-index: 1000;
+}
+
+/* ---------- NOSOTROS ---------- */
+
+.hero-nosotros {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0 0 25px 25px;
+}
+
+.hero-nosotros img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+    z-index: -2;
+}
+
+/* Capa oscura sobre la imagen */
+.hero-nosotros::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.40);
+    z-index: -1;
+}
+
+.hero-contenido {
+    max-width: 650px;
+    margin-left: 8%;
+    color: white;
+}
+
+.hero-subtitulo {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero-contenido h1 {
+    color: white;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin: 0 0 20px;
+}
+
+.hero-contenido h1 span {
+    color: #FFD700;
+}
+
+.hero-contenido > p:not(.hero-subtitulo) {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.btn-historia {
+    display: inline-block;
+    background-color: #2E8B57;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn-historia:hover {
+    opacity: 0.9;
+}
+
+/* ---------- NUESTRA HISTORIA ---------- */
+.seccion-historia {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.historia-imagen img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.historia-texto h2 {
+    font-size: 2.4rem;
+    margin: 15px 0 25px;
+    color: #333333;
+}
+
+.historia-texto p {
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 18px;
+}
+
+.etiqueta {
+    color: #2E8B57;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* ---------- COMPROMISO ---------- */
+
+.compromiso {
+    background-color: #EEF5EE;
+    padding: 80px 20px;
+}
+
+.titulo-seccion {
+    max-width: 750px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.titulo-seccion h2 {
+    font-size: 2.5rem;
+    color: #333333;
+    margin: 15px 0;
+}
+
+.titulo-seccion p {
+    line-height: 1.7;
+    color: #555555;
+}
+
+.grid-compromiso {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card-compromiso {
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease;
+}
+
+.card-compromiso:hover {
+    transform: translateY(-8px);
+}
+
+.card-compromiso img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.contenido-card {
+    padding: 25px;
+}
+
+.contenido-card span {
+    font-size: 2rem;
+}
+
+.contenido-card h3 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #333333;
+    margin: 15px 0 10px;
+}
+
+.contenido-card p {
+    color: #555555;
+    line-height: 1.7;
+}
+
+/* ---------- MISIÓN Y VISIÓN ---------- */
+
+.mision-vision {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.bloque-mision,
+.bloque-vision {
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.bloque-mision {
+    background-color: #EAF5EC;
+}
+
+.bloque-vision {
+    background-color: #FFF6E0;
+}
+
+.icono-mision,
+.icono-vision {
+    font-size: 3rem;
+}
+
+.bloque-mision h2,
+.bloque-vision h2 {
+    color: #333333;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.bloque-mision p,
+.bloque-vision p {
+    color: #555555;
+    line-height: 1.8;
+}
+
+/* ---------- PRESENCIA ---------- */
+.presencia {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.ciudades {
+    max-width: 900px;
+    margin: 40px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.ciudades span {
+    background-color: #EAF5EC;
+    color: #2E8B57;
+
+    padding: 12px 20px;
+    border-radius: 25px;
+
+    font-weight: 600;
+}
+
+.mapa-placeholder {
+    max-width: 800px;
+    margin: 40px auto 0;
+
+    background-color: #F7F7F7;
+    border: 2px dashed #2E8B57;
+    border-radius: 20px;
+
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.mapa-placeholder span {
+    font-size: 3rem;
+}
+
+.mapa-placeholder p {
+    color: #555555;
+    margin-top: 15px;
+}
+
+/* ---------- RESPONSIVE NOSOTROS ---------- */
+
+@media (max-width: 768px) {
+
+    .hero-nosotros {
+        min-height: 550px;
+    }
+
+    .hero-contenido {
+        margin: 0 30px;
+    }
+
+    .hero-contenido h1 {
+        font-size: 3rem;
+    }
+
+    .seccion-historia {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 50px auto;
+    }
+
+    .historia-imagen img {
+        height: 350px;
+    }
+
+    .grid-compromiso {
+        grid-template-columns: 1fr;
+    }
+
+    .mision-vision {
+        grid-template-columns: 1fr;
+        margin: 50px auto;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ---------- FOOTER HUERTOHOGAR ---------- */
+
+footer {
+    background-color: #244d36;
+    color: white;
+    margin-top: 80px;
+    padding: 50px 40px 20px;
+}
+
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-marca h2 {
+    color: white;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.footer-marca p {
+    color: #d9e5dc;
+    line-height: 1.7;
+    max-width: 350px;
+}
+
+.footer-seccion {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-seccion h3 {
+    color: #f4c542;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.footer-seccion a,
+.footer-seccion p {
+    color: #d9e5dc;
+    text-decoration: none;
+    margin: 6px 0;
+    font-size: 0.95rem;
+}
+
+.footer-seccion a:hover {
+    color: #f4c542;
+}
+
+.footer-inferior {
+    max-width: 1200px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
 }
 
 /* ---------- DETALLE DE PRODUCTO ---------- */
@@ -399,3 +1094,23 @@ footer a {
 .btn-vaciar:hover {
     background-color: #6e360f;
 }
+
+.footer-inferior p {
+    margin: 0;
+    color: #b9cbbd;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    footer {
+        padding: 40px 25px 20px;
+    }
+
+}
+
