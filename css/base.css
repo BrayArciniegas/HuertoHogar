@@ -437,7 +437,8 @@ main {
 
 #mensajeExito ,
 #mensajeExitoLogin,
-#mensajeExitoContacto{
+#mensajeExitoContacto,
+#mensajeCarrito {
     display: none;
     position: fixed;
     top: 50%;

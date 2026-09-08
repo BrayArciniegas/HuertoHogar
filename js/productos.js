@@ -121,7 +121,16 @@ function añadirAlCarrito(idProducto, cantidad) {
     }
 
     guardarCarrito(carrito);
-    alert(`${producto.nombre} añadido al carrito`);
+
+    const mensajeCarrito = document.querySelector("#mensajeCarrito");
+    if (mensajeCarrito) {
+        mensajeCarrito.textContent = `¡${producto.nombre} añadido al carrito! 🛒`;
+        mensajeCarrito.style.display = "block";
+
+        setTimeout(function () {
+            mensajeCarrito.style.display = "none";
+        }, 3000);
+    }
 }
 
 // Conecta el botón "Añadir al carrito" cuando existe en la página (detalle-producto.html)
