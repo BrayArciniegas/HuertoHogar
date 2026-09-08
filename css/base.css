@@ -35,13 +35,12 @@ header .logo {
     justify-self: start;
 }
 
-nav {
-    flex: 1;
+header nav {
     display: flex;
     justify-content: center;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
@@ -52,14 +51,14 @@ nav ul {
     flex-wrap: nowrap;
 }
 
-nav a {
+header nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
     white-space: nowrap;
 }
 
-nav a:hover {
+header nav a:hover {
     text-decoration: underline;
 }
 
@@ -1220,11 +1219,11 @@ footer {
         gap: 15px;
     }
 
-    nav ul {
+    header nav ul {
         gap: 15px;
     }
 
-    nav a {
+    header nav a {
         font-size: 0.95rem;
     }
 
@@ -1254,18 +1253,18 @@ footer {
         font-size: 1.6rem;
     }
 
-    nav {
+    header nav {
         width: 100%;
     }
 
-    nav ul {
+    header nav ul {
         width: 100%;
         flex-wrap: wrap;
         gap: 12px 20px;
         justify-content: center;
     }
 
-    nav a {
+    header nav a {
         font-size: 0.95rem;
     }
 
@@ -1290,11 +1289,11 @@ footer {
         font-size: 1.4rem;
     }
 
-    nav ul {
+    header nav ul {
         gap: 10px 15px;
     }
 
-    nav a {
+    header nav a {
         font-size: 0.85rem;
     }
 
