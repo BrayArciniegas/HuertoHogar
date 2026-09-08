@@ -1017,10 +1017,11 @@ footer {
 .detalle-blog {
     background-color: white;
     border-radius: 12px;
-    padding: 30px;
+    padding: 40px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    margin-top: 20px;
-    max-width: 800px;
+    margin: 20px auto 0;
+    max-width: 1000px;
+    width: 100%;
 }
 
 .detalle-blog img {
@@ -1043,6 +1044,40 @@ footer {
 .detalle-blog p {
     color: #555;
     line-height: 1.7;
+}
+
+
+.detalle-blog + p {
+    text-align: center;
+}
+
+
+
+.volver-blog {
+    max-width: 1000px;
+    margin: 25px auto 0;
+}
+
+.volver-blog a {
+    display: inline-block;
+
+    color: #8B4513;
+    text-decoration: none;
+
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    padding: 10px 18px;
+
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
+}
+
+.volver-blog a:hover {
+    background-color: #8B4513;
+    color: white;
 }
 
 /* ---------- CARRITO ---------- */
