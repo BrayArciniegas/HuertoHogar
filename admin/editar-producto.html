@@ -8,6 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/admin.css">
+    <script>
+        if (sessionStorage.getItem("adminAutenticado") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 <body>
 
@@ -22,6 +27,7 @@
                     <li><a href="usuarios.html">Usuarios</a></li>
                 </ul>
             </nav>
+            <button type="button" class="btn-logout-admin" onclick="cerrarSesionAdmin()">Cerrar sesión</button>
         </aside>
 
         <main class="admin-main">
@@ -74,5 +80,6 @@
 
     </div>
 
+    <script src="../js/admin-auth.js"></script>
 </body>
 </html>
