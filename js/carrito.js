@@ -75,16 +75,28 @@ function actualizarTotal() {
     document.querySelector("#totalCarrito").textContent = formatearPrecioCarrito(total);
 }
 
-// Vacía todo el carrito
-function inicializarBotonVaciar() {
-    const boton = document.querySelector("#btnVaciarCarrito");
+// Simula la compra: confirma el pedido y vacía el carrito
+function inicializarBotonComprar() {
+    const boton = document.querySelector("#btnComprar");
     if (!boton) return;
 
+    const mensajeCompra = document.querySelector("#mensajeCompra");
+
     boton.addEventListener("click", () => {
+        const carrito = obtenerCarrito();
+        if (carrito.length === 0) return;
+
         localStorage.removeItem("carrito");
         mostrarCarrito();
+
+        mensajeCompra.textContent = "¡Compra realizada con éxito! Gracias por tu pedido 🌱";
+        mensajeCompra.style.display = "block";
+
+        setTimeout(function () {
+            mensajeCompra.style.display = "none";
+        }, 3000);
     });
 }
 
 mostrarCarrito();
-inicializarBotonVaciar();
+inicializarBotonComprar();

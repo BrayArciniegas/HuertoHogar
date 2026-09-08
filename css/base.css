@@ -438,7 +438,8 @@ main {
 #mensajeExito ,
 #mensajeExitoLogin,
 #mensajeExitoContacto,
-#mensajeCarrito {
+#mensajeCarrito,
+#mensajeCompra {
     display: none;
     position: fixed;
     top: 50%;
@@ -1173,9 +1174,9 @@ footer {
     color: #2E8B57;
 }
 
-.btn-vaciar {
+.btn-comprar {
     width: 100%;
-    background-color: #8B4513;
+    background-color: #2E8B57;
     color: white;
     border: none;
     padding: 12px;
@@ -1185,8 +1186,8 @@ footer {
     margin-top: 10px;
 }
 
-.btn-vaciar:hover {
-    background-color: #6e360f;
+.btn-comprar:hover {
+    background-color: #256b45;
 }
 
 .footer-inferior p {
