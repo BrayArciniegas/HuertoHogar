@@ -172,6 +172,12 @@ if (formRegistro) {
         const direccion =
             document.getElementById("direccion").value.trim();
 
+        const regionRegistro =
+            document.getElementById("region").value;
+
+        const comunaRegistro =
+            document.getElementById("comuna").value;
+
         const password =
             document.getElementById("password").value;
 
@@ -217,6 +223,16 @@ if (formRegistro) {
 
             mensajeError.textContent =
                 "La dirección no puede superar los 300 caracteres.";
+
+        } else if (regionRegistro === "") {
+
+            mensajeError.textContent =
+                "Debes seleccionar una región.";
+
+        } else if (comunaRegistro === "") {
+
+            mensajeError.textContent =
+                "Debes seleccionar una comuna.";
 
         } else if (
             password.length < 4 ||
