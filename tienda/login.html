@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión | HuertoHogar</title>
 
-    <link rel="preconect" href="https://fonts.googleapis.com">
-    <link rel="preconect" href="https://fonts.gstatic.com"crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/base.css">
 
 </head>
+
 <body>
+
     <header>
-        <a href="../index.html" class="logo">🥑HuertoHogar</a>
+        <a href="../index.html" class="logo">🥑 HuertoHogar</a>
         <nav>
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
@@ -25,78 +28,144 @@
             </ul>
         </nav>
         <div class="acciones-header">
+            <a href="login.html">Iniciar sesión</a>
             <a href="registro.html">Registrarse</a>
             <a href="carrito.html">🛒 Carrito</a>
+
         </div>
     </header>
 
+
     <main>
+
         <section class="login-contenedor">
+
             <div class="encabezado-login">
+
                 <span class="icono-login">🌿</span>
-                <h1>¡Que bueno verte de nuevo!</h1>
+
+                <h1>¡Qué bueno verte de nuevo!</h1>
+
                 <p>
-                    Inicia sesión para continar disfrutando de HuertoHogar.
+                    Inicia sesión para continuar disfrutando de HuertoHogar.
                 </p>
+
             </div>
+
+
             <form id="formLogin">
-                <div class="campo">
-                    <label for="emailLogin">Correo electronico:</label>
-                    <input type="email" id="emailLogin" name="emailLogin" placeholder="ejemplo@correo.com" required>
-                </div>
 
                 <div class="campo">
-                    <label for="passwordLogin">Contraseña:</label>
-                    <input type="password" id="passwordLogin" name="passwordLogin"
-                    placeholder="Ingresa tu contraseña" required>
+
+                    <label for="emailLogin">
+                        Correo electrónico:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="emailLogin"
+                        name="emailLogin"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+
                 </div>
+
+
+                <div class="campo">
+
+                    <label for="passwordLogin">
+                        Contraseña:
+                    </label>
+
+                    <input
+                        type="password"
+                        id="passwordLogin"
+                        name="passwordLogin"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                    >
+
+                </div>
+
 
                 <p id="mensajeErrorLogin"></p>
+
                 <p id="mensajeExitoLogin"></p>
 
-                <button type="submit" class="btn-login">Iniciar sesión</button>
+
+                <button type="submit" class="btn-login">
+                    Iniciar sesión
+                </button>
+
             </form>
+
+
             <p class="texto-registro">
+
                 ¿Aún no tienes cuenta?
-                <a href="registro.html">Registrate aquí</a>
+
+                <a href="registro.html">
+                    Regístrate aquí
+                </a>
+
             </p>
+
         </section>
+
     </main>
 
+
     <footer>
-    <div class="footer-contenido">
 
-        <div class="footer-marca">
-            <h2>🌱 HuertoHogar</h2>
+        <div class="footer-contenido">
+
+            <div class="footer-marca">
+
+                <h2>🌱 HuertoHogar</h2>
+
+                <p>
+                    Productos frescos y naturales,
+                    directamente del campo a tu hogar.
+                </p>
+
+            </div>
+
+
+            <div class="footer-seccion">
+
+                <h3>HuertoHogar</h3>
+
+                <a href="../index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+
+            </div>
+
+
+            <div class="footer-seccion">
+                <h3>HuertoHogar</h3>
+                <a href="../index.html">Inicio</a>
+                <a href="productos.html">Productos</a>  
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+
+        </div>
+
+
+        <div class="footer-inferior">
+
             <p>
-                Productos frescos y naturales,
-                directamente del campo a tu hogar.
+                © 2026 HuertoHogar. Del campo a tu hogar 🌿
             </p>
+
         </div>
 
-        <div class="footer-seccion">
-            <h3>HuertoHogar</h3>
-            <a href="../index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="contacto.html">Contacto</a>
-        </div>
+    </footer>
 
-        <div class="footer-seccion">
-            <h3>Contacto</h3>
-            <p>📧 contacto@huertohogar.cl</p>
-            <p>📍 Chile</p>
-            <p>📞 +56 9 1234 5678</p>
-        </div>
-
-    </div>
-
-    <div class="footer-inferior">
-        <p>© 2026 HuertoHogar. Del campo a tu hogar 🌿</p>
-    </div>
-</footer>
 
     <script src="../js/validaciones.js"></script>
-    
+
 </body>
 </html>

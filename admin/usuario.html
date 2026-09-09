@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Usuarios - HuertoHogar</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <script>
+        if (sessionStorage.getItem("adminAutenticado") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="admin-sidebar">
+
+        <a href="index.html" class="logo-admin">
+            🥑 HuertoHogar Admin
+        </a>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="productos.html">Productos</a>
+                </li>
+
+                <li>
+                    <a href="usuario.html" class="activo">Usuarios</a>
+                </li>
+            </ul>
+        </nav>
+
+        <button type="button" onclick="cerrarSesionAdmin()">
+            Cerrar sesión
+        </button>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="admin-main">
+
+        <div class="admin-header">
+
+            <div>
+                <h1>Usuarios</h1>
+                <p>Administración de usuarios de HuertoHogar</p>
+            </div>
+
+            <a href="nuevo-usuario.html" class="btn-admin">
+                + Nuevo Usuario
+            </a>
+
+        </div>
+
+
+        <!-- TABLA DE USUARIOS -->
+        <section class="tabla-contenedor">
+
+            <table class="tabla-admin">
+
+                <thead>
+                    <tr>
+                        <th>RUN</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>Tipo de usuario</th>
+                        <th>Región</th>
+                        <th>Comuna</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaUsuarios">
+
+                    <!-- Los usuarios serán cargados mediante JavaScript -->
+
+                </tbody>
+
+            </table>
+
+            <p id="mensajeUsuarios"></p>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="../js/admin-auth.js"></script>
+<script src="../js/admin-usuarios.js"></script>
+
+</body>
+</html>

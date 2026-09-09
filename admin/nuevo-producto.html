@@ -24,7 +24,7 @@
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="productos.html" class="activo">Productos</a></li>
-                    <li><a href="usuarios.html">Usuarios</a></li>
+                    <li><a href="usuario.html">Usuarios</a></li>
                 </ul>
             </nav>
             <button type="button" class="btn-logout-admin" onclick="cerrarSesionAdmin()">Cerrar sesión</button>
@@ -33,53 +33,81 @@
         <main class="admin-main">
             <h1>Nuevo Producto</h1>
 
-            <form id="formProducto" class="form-admin">
+    <form id="formProducto" class="form-admin">
 
-                <label for="codigo">Código producto:</label>
-                <input type="text" id="codigo" name="codigo">
-                <small>Mínimo 3 caracteres, sin límite máximo</small>
+        <label for="codigo">Código producto:</label>
+        <input type="text" id="codigo" name="codigo" required>
+        <small>Mínimo 3 caracteres, sin límite máximo</small>
 
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" maxlength="100">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" maxlength="100" required>
 
-                <label for="descripcion">Descripción (opcional):</label>
-                <textarea id="descripcion" name="descripcion" maxlength="500"></textarea>
+        <label for="descripcion">Descripción (opcional):</label>
+        <textarea id="descripcion" name="descripcion" maxlength="500"></textarea>
 
-                <div class="fila-doble">
-                    <div>
-                        <label for="precio">Precio:</label>
-                        <input type="number" id="precio" name="precio" min="0" step="0.01">
-                        <small>Puede ser 0 (producto FREE) o decimales</small>
-                    </div>
-                    <div>
-                        <label for="stock">Stock:</label>
-                        <input type="number" id="stock" name="stock" min="0" step="1">
-                        <small>Solo números enteros</small>
-                    </div>
-                </div>
+        <div class="fila-doble">
+            <div>
+                <label for="precio">Precio:</label>
+                <input
+                    type="number"
+                    id="precio"
+                    name="precio"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+                <small>Puede ser 0 (producto FREE) o decimales</small>
+            </div>
 
-                <label for="stockCritico">Stock Crítico (opcional):</label>
-                <input type="number" id="stockCritico" name="stockCritico" min="0" step="1">
-                <small>Alerta cuando el stock llegue a este nivel o menos</small>
+            <div>
+                <label for="stock">Stock:</label>
+                <input
+                    type="number"
+                    id="stock"
+                    name="stock"
+                    min="0"
+                    step="1"
+                    required
+                >
+                <small>Solo números enteros</small>
+            </div>
+        </div>
 
-                <label for="categoria">Categoría:</label>
-                <select id="categoria" name="categoria">
-                    <option value="" selected disabled>Selecciona una categoría</option>
-                    <option value="frutas">Frutas Frescas</option>
-                    <option value="verduras">Verduras Orgánicas</option>
-                    <option value="organicos">Productos Orgánicos</option>
-                    <option value="lacteos">Productos Lácteos</option>
-                </select>
+        <label for="stockCritico">Stock Crítico (opcional):</label>
+        <input
+            type="number"
+            id="stockCritico"
+            name="stockCritico"
+            min="0"
+            step="1"
+        >
+        <small>Alerta cuando el stock llegue a este nivel o menos</small>
 
-                <label for="imagen">Imagen (opcional):</label>
-                <input type="file" id="imagen" name="imagen" accept="image/*">
+        <label for="categoria">Categoría:</label>
+         <select id="categoria" name="categoria" required>
+            <option value="" selected disabled>
+            Selecciona una categoría
+            </option>
+            <option value="frutas">Frutas Frescas</option>
+            <option value="verduras">Verduras Orgánicas</option>
+            <option value="organicos">Productos Orgánicos</option>
+            <option value="lacteos">Productos Lácteos</option>
+        </select>
 
-                <button type="submit">Guardar Producto</button>
-            </form>
+        <label for="imagen">Imagen (opcional):</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*">
+
+        <button type="submit">Guardar Producto</button>
+
+    </form>
         </main>
 
     </div>
 
+
     <script src="../js/admin-auth.js"></script>
+    <script src="../js/productos.js"></script>
+    <script src="../js/validaciones.js"></script>
+
 </body>
 </html>
