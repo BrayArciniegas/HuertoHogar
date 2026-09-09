@@ -75,7 +75,6 @@
                     type="text"
                     id="codigo"
                     name="codigo"
-                    value="FR001"
                     required
                 >
 
@@ -93,7 +92,6 @@
                     id="nombre"
                     name="nombre"
                     maxlength="100"
-                    value="Manzanas Fuji"
                     required
                 >
 
@@ -106,7 +104,7 @@
                     id="descripcion"
                     name="descripcion"
                     maxlength="500"
-                >Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule.</textarea>
+                ></textarea>
 
 
                 <div class="fila-doble">
@@ -123,7 +121,6 @@
                             name="precio"
                             min="0"
                             step="0.01"
-                            value="1200"
                             required
                         >
 
@@ -146,7 +143,6 @@
                             name="stock"
                             min="0"
                             step="1"
-                            value="150"
                             required
                         >
 
@@ -169,7 +165,6 @@
                     name="stockCritico"
                     min="0"
                     step="1"
-                    value="20"
                 >
 
                 <small>
@@ -186,7 +181,11 @@
                     name="categoria"
                     required
                 >
-                    <option value="frutas" selected>
+                    <option value="" disabled>
+                        Selecciona una categoría
+                    </option>
+
+                    <option value="frutas">
                         Frutas Frescas
                     </option>
 
@@ -215,10 +214,9 @@
                     accept="image/*"
                 >
 
-                <small>
-                    Imagen actual: manzanas.jpg
-                </small>
+                <small id="imagenActualTexto"></small>
 
+                <p id="mensajeProducto"></p>
 
                 <button type="submit">
                     Guardar Cambios
@@ -232,6 +230,8 @@
 
 
     <script src="../js/admin-auth.js"></script>
+    <script src="../js/productos.js"></script>
+    <script src="../js/admin-productos.js"></script>
 
 </body>
 </html>

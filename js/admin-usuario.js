@@ -19,7 +19,7 @@ function guardarUsuarios(usuarios) {
 
 function mostrarTablaUsuarios() {
 
-    const tbody = document.querySelector("#tablaUsuarios tbody");
+    const tbody = document.querySelector("#tablaUsuarios");
 
     if (!tbody) {
         return;

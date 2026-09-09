@@ -276,7 +276,8 @@
 
 /* ---------- MENSAJES ---------- */
 
-#mensajeUsuario {
+#mensajeUsuario,
+#mensajeProducto {
     margin-top: 15px;
     font-weight: bold;
 }

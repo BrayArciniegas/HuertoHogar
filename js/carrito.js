@@ -23,7 +23,7 @@ function mostrarCarrito() {
         fila.classList.add("item-carrito");
 
         fila.innerHTML = `
-            <img src="${item.imagen}" alt="${item.nombre}">
+            <img src="${resolverImagenProducto(item.imagen)}" alt="${item.nombre}">
             <div class="item-info">
                 <h3>${item.nombre}</h3>
                 <p>${formatearPrecioCarrito(item.precio)} / ${item.unidad}</p>

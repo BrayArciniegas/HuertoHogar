@@ -133,6 +133,55 @@ function actualizarProductos() {
 }
 
 
+function guardarProductos(listaProductos) {
+
+    localStorage.setItem(
+        CLAVE_PRODUCTOS,
+        JSON.stringify(listaProductos)
+    );
+
+    productos = listaProductos;
+
+}
+
+
+/* ---------- UNIDAD DE VENTA ---------- */
+
+// Convierte la unidad del producto ("kilo", "bolsa 500g", "litro", etc.)
+// en la palabra a mostrar junto a la cantidad, en singular o plural.
+function textoUnidad(unidad, cantidad) {
+
+    const palabraBase = (unidad || "unidad").split(" ")[0];
+
+    if (cantidad === 1) {
+        return palabraBase;
+    }
+
+    const ultimaLetra = palabraBase.slice(-1).toLowerCase();
+    const esVocal = "aeiouáéíóú".includes(ultimaLetra);
+
+    return palabraBase + (esVocal ? "s" : "es");
+}
+
+
+/* ---------- IMAGEN DEL PRODUCTO ---------- */
+
+// Las imágenes subidas desde el admin quedan como data URL (base64);
+// las del catálogo original son solo el nombre del archivo en img/.
+function resolverImagenProducto(nombreImagen) {
+
+    if (!nombreImagen) {
+        return "../img/placeholder.svg";
+    }
+
+    if (nombreImagen.startsWith("data:") || nombreImagen.startsWith("http")) {
+        return nombreImagen;
+    }
+
+    return `../img/${nombreImagen}`;
+}
+
+
 /* ---------- FORMATO DE PRECIO ---------- */
 
 function formatearPrecio(precio) {
@@ -176,9 +225,9 @@ function mostrarProductos() {
         tarjeta.innerHTML = `
 
             <img
-                src="../img/${producto.imagen}"
+                src="${resolverImagenProducto(producto.imagen)}"
                 alt="${producto.nombre}"
-                onerror="this.src='../img/placeholder.jpg'"
+                onerror="this.src='../img/placeholder.svg'"
             >
 
             <h3>${producto.nombre}</h3>
@@ -270,9 +319,9 @@ function mostrarDetalleProducto() {
         <div class="detalle-imagen">
 
             <img
-                src="../img/${producto.imagen}"
+                src="${resolverImagenProducto(producto.imagen)}"
                 alt="${producto.nombre}"
-                onerror="this.src='../img/placeholder.jpg'"
+                onerror="this.src='../img/placeholder.svg'"
             >
 
         </div>
@@ -312,11 +361,11 @@ function mostrarDetalleProducto() {
 
             <select id="cantidadProducto">
 
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option value="1">1 ${textoUnidad(producto.unidad, 1)}</option>
+                <option value="2">2 ${textoUnidad(producto.unidad, 2)}</option>
+                <option value="3">3 ${textoUnidad(producto.unidad, 3)}</option>
+                <option value="4">4 ${textoUnidad(producto.unidad, 4)}</option>
+                <option value="5">5 ${textoUnidad(producto.unidad, 5)}</option>
 
             </select>
 
@@ -352,6 +401,25 @@ function guardarCarrito(carrito) {
         JSON.stringify(carrito)
     );
 
+}
+
+
+// Muestra el mensaje flotante de #mensajeCarrito y lo oculta a los 3 segundos
+function mostrarMensajeCarrito(texto) {
+
+    const mensaje = document.getElementById("mensajeCarrito");
+
+    if (!mensaje) {
+        alert(texto);
+        return;
+    }
+
+    mensaje.textContent = texto;
+    mensaje.style.display = "block";
+
+    setTimeout(function () {
+        mensaje.style.display = "none";
+    }, 3000);
 }
 
 
@@ -397,6 +465,8 @@ function agregarAlCarrito(id) {
 
             imagen: producto.imagen,
 
+            unidad: producto.unidad,
+
             cantidad: 1
 
         });
@@ -407,21 +477,7 @@ function agregarAlCarrito(id) {
     guardarCarrito(carrito);
 
 
-    const mensaje =
-        document.getElementById("mensajeCarrito");
-
-    if (mensaje) {
-
-        mensaje.textContent =
-            "Producto agregado al carrito 🌱";
-
-    } else {
-
-        alert(
-            "Producto agregado al carrito."
-        );
-
-    }
+    mostrarMensajeCarrito("Producto agregado al carrito 🌱");
 
 }
 
@@ -453,17 +509,7 @@ function agregarProductoDetalle(id) {
 
     if (cantidad > producto.stock) {
 
-        const mensaje =
-            document.getElementById(
-                "mensajeCarrito"
-            );
-
-        if (mensaje) {
-
-            mensaje.textContent =
-                "No hay suficiente stock disponible.";
-
-        }
+        mostrarMensajeCarrito("No hay suficiente stock disponible.");
 
         return;
     }
@@ -495,6 +541,8 @@ function agregarProductoDetalle(id) {
 
             imagen: producto.imagen,
 
+            unidad: producto.unidad,
+
             cantidad: cantidad
 
         });
@@ -504,18 +552,7 @@ function agregarProductoDetalle(id) {
 
     guardarCarrito(carrito);
 
-
-    const mensaje =
-        document.getElementById(
-            "mensajeCarrito"
-        );
-
-    if (mensaje) {
-
-        mensaje.textContent =
-            "Producto agregado al carrito 🌱";
-
-    }
+    mostrarMensajeCarrito("Producto agregado al carrito 🌱");
 
 }
 

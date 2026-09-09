@@ -36,11 +36,11 @@
 
             <div class="resumen-admin">
                 <div class="tarjeta-resumen">
-                    <h2>9</h2>
+                    <h2 id="totalProductos">0</h2>
                     <p>Productos activos</p>
                 </div>
                 <div class="tarjeta-resumen">
-                    <h2>0</h2>
+                    <h2 id="totalUsuarios">0</h2>
                     <p>Usuarios registrados</p>
                 </div>
             </div>
@@ -49,5 +49,11 @@
     </div>
 
     <script src="../js/admin-auth.js"></script>
+    <script src="../js/productos.js"></script>
+    <script src="../js/admin-usuario.js"></script>
+    <script>
+        document.querySelector("#totalProductos").textContent = productos.length;
+        document.querySelector("#totalUsuarios").textContent = obtenerUsuarios().length;
+    </script>
 </body>
 </html>
