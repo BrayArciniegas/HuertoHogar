@@ -82,6 +82,7 @@ function inicializarFormularioProducto() {
     const campoPrecio = document.querySelector("#precio");
     const campoStock = document.querySelector("#stock");
     const campoStockCritico = document.querySelector("#stockCritico");
+    const campoUnidad = document.querySelector("#unidad");
     const campoCategoria = document.querySelector("#categoria");
     const campoImagen = document.querySelector("#imagen");
 
@@ -101,6 +102,7 @@ function inicializarFormularioProducto() {
         campoPrecio.value = productoExistente.precio;
         campoStock.value = productoExistente.stock;
         campoStockCritico.value = productoExistente.stockCritico ?? "";
+        campoUnidad.value = productoExistente.unidad || "";
         campoCategoria.value = obtenerClaveCategoria(productoExistente.categoria) || "";
 
         const imagenActualTexto = document.querySelector("#imagenActualTexto");
@@ -126,6 +128,7 @@ function inicializarFormularioProducto() {
         const precio = campoPrecio.value;
         const stock = campoStock.value;
         const stockCritico = campoStockCritico.value;
+        const unidad = campoUnidad.value;
         const categoria = campoCategoria.value;
 
         if (mensajeProducto) {
@@ -170,6 +173,11 @@ function inicializarFormularioProducto() {
             return;
         }
 
+        if (unidad === "") {
+            if (mensajeProducto) mensajeProducto.textContent = "Debes seleccionar una unidad de venta.";
+            return;
+        }
+
         if (categoria === "") {
             if (mensajeProducto) mensajeProducto.textContent = "Debes seleccionar una categoría.";
             return;
@@ -184,7 +192,7 @@ function inicializarFormularioProducto() {
                 precio: Number(precio),
                 stock: Number(stock),
                 stockCritico: stockCritico === "" ? null : Number(stockCritico),
-                unidad: esEdicion ? productoExistente.unidad : "unidad",
+                unidad: unidad,
                 categoria: CATEGORIAS_PRODUCTO[categoria],
                 imagen: nombreImagen,
                 descripcion: descripcion

@@ -73,6 +73,19 @@
             </div>
         </div>
 
+        <label for="unidad">Unidad de venta:</label>
+        <select id="unidad" name="unidad" required>
+            <option value="" selected disabled>Selecciona una unidad</option>
+            <option value="kilo">Kilo</option>
+            <option value="litro">Litro</option>
+            <option value="unidad">Unidad</option>
+            <option value="docena">Docena</option>
+            <option value="bolsa 500g">Bolsa 500g</option>
+            <option value="frasco 500g">Frasco 500g</option>
+            <option value="paquete">Paquete</option>
+        </select>
+        <small>Se muestra junto al precio, ej: "$1.200 / kilo"</small>
+
         <label for="stockCritico">Stock Crítico (opcional):</label>
         <input
             type="number"
