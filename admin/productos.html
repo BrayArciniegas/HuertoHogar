@@ -19,7 +19,9 @@
     <div class="admin-layout">
 
         <aside class="admin-sidebar">
-            <a href="index.html" class="logo-admin">🥑 HuertoHogar Admin</a>
+            <header>
+                <a href="index.html" class="logo-admin">🥑 HuertoHogar Admin</a>
+            </header>
             <nav>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -33,26 +35,32 @@
         <main class="admin-main">
             <h1>Productos</h1>
 
-            <a href="nuevo-producto.html" class="btn-nuevo">+ Nuevo Producto</a>
+            <section>
+                <a href="nuevo-producto.html" class="btn-nuevo">+ Nuevo Producto</a>
 
-            <table class="tabla-admin" id="tablaProductos">
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Nombre</th>
-                        <th>Categoría</th>
-                        <th>Precio</th>
-                        <th>Stock</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Las filas se generan automáticamente aquí mediante JavaScript -->
-                </tbody>
-            </table>
+                <table class="tabla-admin" id="tablaProductos">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las filas se generan automáticamente aquí mediante JavaScript -->
+                    </tbody>
+                </table>
+            </section>
         </main>
 
     </div>
+
+    <footer class="admin-footer">
+        <p>© 2026 HuertoHogar Admin. Panel de gestión interno 🌿</p>
+    </footer>
 
     <script src="../js/productos.js"></script>
     <script src="../js/admin-productos.js"></script>

@@ -51,6 +51,10 @@ function mostrarTablaUsuarios() {
             <td>${usuario.region}</td>
             <td>${usuario.comuna}</td>
             <td>
+                <a href="editar-usuario.html?run=${usuario.run}">
+                    Editar
+                </a>
+
                 <button type="button" onclick="eliminarUsuario(${indice})">
                     Eliminar
                 </button>

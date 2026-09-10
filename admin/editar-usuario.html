@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editar Usuario - HuertoHogar</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <script>
+        if (sessionStorage.getItem("adminAutenticado") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="admin-sidebar">
+
+        <header>
+            <a href="index.html" class="logo-admin">
+                🥑 HuertoHogar Admin
+            </a>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="productos.html">Productos</a>
+                </li>
+
+                <li>
+                    <a href="usuario.html" class="activo">Usuarios</a>
+                </li>
+            </ul>
+        </nav>
+
+        <button type="button" onclick="cerrarSesionAdmin()">
+            Cerrar sesión
+        </button>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="admin-main">
+
+        <div class="admin-header">
+            <div>
+                <h1>Editar Usuario</h1>
+                <p>Actualiza los datos de un usuario de HuertoHogar</p>
+            </div>
+        </div>
+
+
+        <!-- FORMULARIO -->
+        <section>
+        <form id="formUsuario" class="form-admin">
+
+            <!-- RUN -->
+            <label for="run">RUN:</label>
+
+            <input
+                type="text"
+                id="run"
+                name="run"
+                placeholder="Ej: 190110222"
+                minlength="7"
+                maxlength="9"
+                autocomplete="off"
+                required
+            >
+
+            <small>
+                El RUN identifica al usuario y no se puede modificar.
+            </small>
+
+
+            <!-- NOMBRE -->
+            <label for="nombre">Nombre:</label>
+
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                maxlength="50"
+                autocomplete="given-name"
+                required
+            >
+
+
+            <!-- APELLIDOS -->
+            <label for="apellidos">Apellidos:</label>
+
+            <input
+                type="text"
+                id="apellidos"
+                name="apellidos"
+                maxlength="100"
+                autocomplete="family-name"
+                required
+            >
+
+
+            <!-- CORREO -->
+            <label for="email">Correo electrónico:</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                maxlength="100"
+                placeholder="usuario@duoc.cl"
+                autocomplete="email"
+                required
+            >
+
+            <small>
+                Se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com.
+            </small>
+
+
+            <!-- FECHA DE NACIMIENTO -->
+            <label for="fechaNacimiento">Fecha de nacimiento:</label>
+
+            <input
+                type="date"
+                id="fechaNacimiento"
+                name="fechaNacimiento"
+                autocomplete="bday"
+            >
+
+            <small>
+                Campo opcional.
+            </small>
+
+
+            <!-- TIPO DE USUARIO -->
+            <label for="tipoUsuario">Tipo de usuario:</label>
+
+            <select
+                id="tipoUsuario"
+                name="tipoUsuario"
+                required
+            >
+                <option value="">Seleccione un tipo</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Cliente">Cliente</option>
+                <option value="Vendedor">Vendedor</option>
+            </select>
+
+
+            <!-- REGIÓN -->
+            <label for="region">Región:</label>
+
+            <select
+                id="region"
+                name="region"
+                autocomplete="address-level1"
+                required
+            >
+                <option value="">Seleccione una región</option>
+            </select>
+
+
+            <!-- COMUNA -->
+            <label for="comuna">Comuna:</label>
+
+            <select
+                id="comuna"
+                name="comuna"
+                autocomplete="address-level2"
+                required
+            >
+                <option value="">Seleccione una comuna</option>
+            </select>
+
+
+            <!-- DIRECCIÓN -->
+            <label for="direccion">Dirección:</label>
+
+            <textarea
+                id="direccion"
+                name="direccion"
+                maxlength="300"
+                autocomplete="street-address"
+                required
+            ></textarea>
+
+            <small>
+                Máximo 300 caracteres.
+            </small>
+
+
+            <!-- MENSAJE -->
+            <p id="mensajeUsuario"></p>
+
+
+            <!-- BOTONES -->
+            <div class="acciones-formulario">
+
+                <button type="submit">
+                    Guardar Cambios
+                </button>
+
+                <a href="usuario.html">
+                    Cancelar
+                </a>
+
+            </div>
+
+        </form>
+        </section>
+
+    </main>
+
+</div>
+
+<footer class="admin-footer">
+    <p>© 2026 HuertoHogar Admin. Panel de gestión interno 🌿</p>
+</footer>
+
+<script src="../js/admin-auth.js"></script>
+<script src="../js/validaciones.js"></script>
+</body>
+</html>

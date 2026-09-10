@@ -19,7 +19,9 @@
     <div class="admin-layout">
 
         <aside class="admin-sidebar">
-            <a href="index.html" class="logo-admin">🥑 HuertoHogar Admin</a>
+            <header>
+                <a href="index.html" class="logo-admin">🥑 HuertoHogar Admin</a>
+            </header>
             <nav>
                 <ul>
                     <li><a href="index.html" class="activo">Inicio</a></li>
@@ -34,7 +36,7 @@
             <h1>¡Hola Administrador! 👋</h1>
             <p>Bienvenido al panel de gestión de HuertoHogar. Desde aquí puedes administrar el catálogo de productos y los usuarios del sistema.</p>
 
-            <div class="resumen-admin">
+            <section class="resumen-admin">
                 <div class="tarjeta-resumen">
                     <h2 id="totalProductos">0</h2>
                     <p>Productos activos</p>
@@ -43,10 +45,14 @@
                     <h2 id="totalUsuarios">0</h2>
                     <p>Usuarios registrados</p>
                 </div>
-            </div>
+            </section>
         </main>
 
     </div>
+
+    <footer class="admin-footer">
+        <p>© 2026 HuertoHogar Admin. Panel de gestión interno 🌿</p>
+    </footer>
 
     <script src="../js/admin-auth.js"></script>
     <script src="../js/productos.js"></script>

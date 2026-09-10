@@ -5,6 +5,18 @@
     min-height: 100vh;
 }
 
+.admin-footer {
+    background-color: #244d36;
+    color: #d9e5dc;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 0.85rem;
+}
+
+.admin-footer p {
+    margin: 0;
+}
+
 .admin-sidebar {
     width: 220px;
     background-color: #2E8B57;

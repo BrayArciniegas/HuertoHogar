@@ -29,21 +29,23 @@
     </header>
 
     <main>
-        <h1>Mi Carrito de Compras</h1>
+        <section>
+            <h1>Mi Carrito de Compras</h1>
 
-        <div class="contenedor-carrito">
-            <div id="listaCarrito" class="lista-carrito">
-                <!-- Los items del carrito se generan aquí mediante JavaScript -->
+            <div class="contenedor-carrito">
+                <article id="listaCarrito" class="lista-carrito">
+                    <!-- Los items del carrito se generan aquí mediante JavaScript -->
+                </article>
+
+                <aside class="resumen-carrito">
+                    <h2>Resumen</h2>
+                    <p class="total-carrito">Total: <span id="totalCarrito">$0</span></p>
+                    <button id="btnComprar" class="btn-comprar">Comprar</button>
+                </aside>
             </div>
 
-            <aside class="resumen-carrito">
-                <h2>Resumen</h2>
-                <p class="total-carrito">Total: <span id="totalCarrito">$0</span></p>
-                <button id="btnComprar" class="btn-comprar">Comprar</button>
-            </aside>
-        </div>
-
-        <p id="mensajeCompra"></p>
+            <p id="mensajeCompra"></p>
+        </section>
     </main>
 
     <footer>

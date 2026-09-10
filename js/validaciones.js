@@ -435,6 +435,60 @@ if (formUsuario) {
     const mensajeUsuario =
         document.getElementById("mensajeUsuario");
 
+    /* ---------- MODO EDICIÓN (admin/editar-usuario.html?run=...) ---------- */
+
+    const runEdicion =
+        new URLSearchParams(window.location.search).get("run");
+
+    const usuariosExistentesParaEdicion =
+        JSON.parse(
+            localStorage.getItem("usuariosHuertoHogar")
+        ) || [];
+
+    const usuarioEnEdicion =
+        runEdicion
+            ? usuariosExistentesParaEdicion.find(
+                (usuario) => usuario.run &&
+                    usuario.run.toUpperCase() === runEdicion.toUpperCase()
+            )
+            : null;
+
+    const esEdicionUsuario = Boolean(usuarioEnEdicion);
+
+    if (esEdicionUsuario) {
+
+        document.getElementById("run").value = usuarioEnEdicion.run;
+        document.getElementById("run").disabled = true;
+
+        document.getElementById("nombre").value = usuarioEnEdicion.nombre;
+        document.getElementById("apellidos").value = usuarioEnEdicion.apellidos;
+        document.getElementById("email").value = usuarioEnEdicion.email;
+
+        if (document.getElementById("fechaNacimiento")) {
+            document.getElementById("fechaNacimiento").value =
+                usuarioEnEdicion.fechaNacimiento || "";
+        }
+
+        document.getElementById("tipoUsuario").value = usuarioEnEdicion.tipo;
+        document.getElementById("direccion").value = usuarioEnEdicion.direccion;
+
+        if (region) {
+            region.value = usuarioEnEdicion.region;
+            region.dispatchEvent(new Event("change"));
+
+            if (comuna) {
+                comuna.value = usuarioEnEdicion.comuna;
+            }
+        }
+
+    } else if (runEdicion) {
+
+        // Llegaron con un ?run= que ya no existe (fue eliminado, por ejemplo)
+        mensajeUsuario.style.color = "#c0392b";
+        mensajeUsuario.textContent =
+            "El usuario que intentas editar no existe.";
+    }
+
     formUsuario.addEventListener("submit", function (event) {
 
         event.preventDefault();
@@ -605,9 +659,9 @@ if (formUsuario) {
         }
 
 
-        /* ---------- CREAR USUARIO ---------- */
+        /* ---------- CREAR O ACTUALIZAR USUARIO ---------- */
 
-        const nuevoUsuario = {
+        const usuarioGuardado = {
 
             run: run,
 
@@ -644,7 +698,8 @@ if (formUsuario) {
             usuariosGuardados.some(
                 usuario =>
                     usuario.run &&
-                    usuario.run.toUpperCase() === run
+                    usuario.run.toUpperCase() === run &&
+                    (!esEdicionUsuario || run !== usuarioEnEdicion.run.toUpperCase())
             );
 
 
@@ -660,7 +715,22 @@ if (formUsuario) {
 
         /* ---------- GUARDAR ---------- */
 
-        usuariosGuardados.push(nuevoUsuario);
+        if (esEdicionUsuario) {
+
+            const indiceUsuario =
+                usuariosGuardados.findIndex(
+                    (usuario) => usuario.run &&
+                        usuario.run.toUpperCase() === usuarioEnEdicion.run.toUpperCase()
+                );
+
+            if (indiceUsuario !== -1) {
+                usuariosGuardados[indiceUsuario] = usuarioGuardado;
+            }
+
+        } else {
+
+            usuariosGuardados.push(usuarioGuardado);
+        }
 
         localStorage.setItem(
             "usuariosHuertoHogar",
@@ -672,19 +742,29 @@ if (formUsuario) {
 
         mensajeUsuario.style.color = "#2E8B57";
 
-        mensajeUsuario.textContent =
-            "¡Usuario creado correctamente! 🌱";
+        mensajeUsuario.textContent = esEdicionUsuario
+            ? "¡Usuario actualizado correctamente! 🌱"
+            : "¡Usuario creado correctamente! 🌱";
 
 
-        /* ---------- LIMPIAR ---------- */
+        /* ---------- LIMPIAR O REDIRIGIR ---------- */
 
-        formUsuario.reset();
+        if (esEdicionUsuario) {
 
-        if (comuna) {
+            setTimeout(function () {
+                window.location.href = "usuario.html";
+            }, 900);
 
-            comuna.innerHTML =
-                '<option value="">Seleccione una comuna</option>';
+        } else {
 
+            formUsuario.reset();
+
+            if (comuna) {
+
+                comuna.innerHTML =
+                    '<option value="">Seleccione una comuna</option>';
+
+            }
         }
 
     });

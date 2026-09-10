@@ -23,9 +23,11 @@
     <!-- MENÚ LATERAL -->
     <aside class="admin-sidebar">
 
-        <a href="index.html" class="logo-admin">
-            🥑 HuertoHogar Admin
-        </a>
+        <header>
+            <a href="index.html" class="logo-admin">
+                🥑 HuertoHogar Admin
+            </a>
+        </header>
 
         <nav>
             <ul>
@@ -62,6 +64,7 @@
 
 
         <!-- FORMULARIO -->
+        <section>
         <form id="formUsuario" class="form-admin">
 
             <!-- RUN -->
@@ -74,6 +77,7 @@
                 placeholder="Ej: 190110222"
                 minlength="7"
                 maxlength="9"
+                autocomplete="off"
                 required
             >
 
@@ -90,6 +94,7 @@
                 id="nombre"
                 name="nombre"
                 maxlength="50"
+                autocomplete="given-name"
                 required
             >
 
@@ -102,6 +107,7 @@
                 id="apellidos"
                 name="apellidos"
                 maxlength="100"
+                autocomplete="family-name"
                 required
             >
 
@@ -115,6 +121,7 @@
                 name="email"
                 maxlength="100"
                 placeholder="usuario@duoc.cl"
+                autocomplete="email"
                 required
             >
 
@@ -130,6 +137,7 @@
                 type="date"
                 id="fechaNacimiento"
                 name="fechaNacimiento"
+                autocomplete="bday"
             >
 
             <small>
@@ -158,6 +166,7 @@
             <select
                 id="region"
                 name="region"
+                autocomplete="address-level1"
                 required
             >
                 <option value="">Seleccione una región</option>
@@ -170,6 +179,7 @@
             <select
                 id="comuna"
                 name="comuna"
+                autocomplete="address-level2"
                 required
             >
                 <option value="">Seleccione una comuna</option>
@@ -183,6 +193,7 @@
                 id="direccion"
                 name="direccion"
                 maxlength="300"
+                autocomplete="street-address"
                 required
             ></textarea>
 
@@ -209,11 +220,15 @@
             </div>
 
         </form>
+        </section>
 
     </main>
 
 </div>
 
+<footer class="admin-footer">
+    <p>© 2026 HuertoHogar Admin. Panel de gestión interno 🌿</p>
+</footer>
 
 <script src="../js/admin-auth.js"></script>
 <script src="../js/validaciones.js"></script>
